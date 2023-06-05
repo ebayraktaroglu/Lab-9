@@ -47,6 +47,15 @@
       width: 122px;
     }
   </style>
+
+	<script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+	<script>
+  	window.TrackJS && TrackJS.install({ 
+    	token: "4fd6086cf61243cf833cdfbe788c668a"
+    	// for more configuration options, see https://docs.trackjs.com
+  	});
+	</script>
+                        
 </head>
 
 <body>
@@ -111,7 +120,6 @@
 				let green = Math.ceil(Math.random()*220);
 				let blue = Math.ceil(Math.random()*220);
 				output.style.color = "rgb(" + red + "," + green + "," + blue + ")";
-
 			}
       
     });
@@ -181,6 +189,10 @@
 		errorBtns[14].addEventListener("click", () => {
 			fakeVariableHere.cookie = "red";
 		})
+
+		window.onerror = () => {
+			console.log("Global Error!!");
+		};
   </script>
 </body>
 
